@@ -1,8 +1,18 @@
 <script lang="ts">
-  import { Canvas } from '@threlte/core'
-  import Scene from './Scene.svelte'
+	import { Canvas } from '@threlte/core';
+	import Scene from './Scene.svelte';
 </script>
 
-<Canvas>
-  <Scene />
-</Canvas>
+<div id="canvasContainer">
+	<Canvas toneMapping={3}>
+		<Scene />
+	</Canvas>
+</div>
+
+<style>
+	#canvasContainer {
+		width: 100%;
+		height: 100%;
+		background-color: var(--secondary-800);
+	}
+</style>
