@@ -1,3 +1,13 @@
+html {
+	min-height: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
 :root {
 	font-family: 'Inter', sans-serif;
 	font-size: 1.125rem;
@@ -8,4 +18,6 @@
 	--secondary-600: hsl(256, 82%, 41%);
 	--secondary-600-transparent: hsla(256, 82%, 41%, calc(1 / 3));
 	--secondary-800: hsl(256, 82%, 13%);
+
+	background: var(--secondary-800);
 }

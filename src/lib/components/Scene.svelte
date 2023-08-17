@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { T } from '@threlte/core';
+	import { T, useThrelte, useRender } from '@threlte/core';
 	import { ContactShadows, Environment, Float, Grid, OrbitControls } from '@threlte/extras';
 	import TitleScene from './models/TitleScene.svelte';
 	import Stars from './models/Stars.svelte';
 
 	import { clamp } from 'three/src/math/MathUtils';
 
-	const START_ZOOM = 1000;
-	const END_ZOOM = 420;
-	const MAX_ZOOM = 75;
+	const START_ZOOM = 1300;
+	const END_ZOOM = 950;
+	const MAX_ZOOM = 80;
 	const MAX_FADE = 100;
 
 	let screenSize: number;
@@ -20,8 +20,16 @@
 		if (screenSize < START_ZOOM) {
 			const zoomFactor =
 				clamp(END_ZOOM - (END_ZOOM + (screenSize - START_ZOOM)), 0, END_ZOOM) / END_ZOOM;
-			zoomAmount = 40 + MAX_ZOOM * zoomFactor;
-			zoomGridFadeAmount = 60 + MAX_FADE * zoomFactor;
+			console.log(zoomFactor);
+			const adjustedFactor = (() => {
+				if (zoomFactor < 0.7) {
+					return zoomFactor / 2;
+				} else {
+					return zoomFactor;
+				}
+			})();
+			zoomAmount = 40 + MAX_ZOOM * adjustedFactor;
+			zoomGridFadeAmount = 60 + MAX_FADE * adjustedFactor;
 			extraStars = true;
 		} else {
 			zoomAmount = 40;
@@ -29,6 +37,8 @@
 			extraStars = false;
 		}
 	}
+
+	const {} = useThrelte();
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
