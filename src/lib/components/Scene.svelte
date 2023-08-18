@@ -20,7 +20,6 @@
 		if (screenSize < START_ZOOM) {
 			const zoomFactor =
 				clamp(END_ZOOM - (END_ZOOM + (screenSize - START_ZOOM)), 0, END_ZOOM) / END_ZOOM;
-			console.log(zoomFactor);
 			const adjustedFactor = (() => {
 				if (zoomFactor < 0.7) {
 					return zoomFactor / 2;

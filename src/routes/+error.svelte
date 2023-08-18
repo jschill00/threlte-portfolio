@@ -45,13 +45,46 @@
 		position: relative;
 		transform: rotateX(-30deg) rotateY(5deg) rotateZ(2deg);
 	}
-	@media (max-width: 600px) {
+
+	h3 {
+		font-size: 2rem;
+		font-weight: 600;
+	}
+
+	@media (max-width: 755px) {
 		#pad {
 			margin-top: 3rem;
 		}
 
-		h2 {
+		p {
 			font-size: 1.25rem;
+			text-shadow: 4px 4px 0px var(--secondary-800);
+			text-wrap: balance;
+			text-align: center;
+		}
+
+		h2 {
+			font-size: 3.125rem;
+			text-wrap: balance;
+		}
+
+		h3 {
+			font-size: 1.5625rem;
+		}
+	}
+
+	@media (max-width: 600px) {
+		h2 {
+			font-size: 1.2rem;
+			text-wrap: balance;
+		}
+
+		#errorCard {
+			grid-template-columns: 2.75fr 2fr;
+		}
+
+		p {
+			font-size: 0.875rem;
 		}
 	}
 
@@ -60,7 +93,7 @@
 	}
 
 	button {
-		margin-top: 2rem;
+		margin-top: 5rem;
 		background-color: var(--secondary-600);
 		padding-inline: 1rem;
 		padding-block: 0.2rem;
@@ -105,14 +138,10 @@
 		display: flex;
 		border-top: 0.5px solid var(--primary-300);
 		margin-right: 1.75rem;
-		justify-content: space-around;
-		align-items: baseline;
+		justify-content: space-evenly;
+		align-items: center;
+		gap: 1rem;
 		padding-top: 1rem;
-	}
-
-	h3 {
-		font-size: 2rem;
-		font-weight: 600;
 	}
 
 	img {
@@ -122,26 +151,41 @@
 		rotate: 10deg;
 	}
 
-	p {
-		font-size: 1.25rem;
-		text-shadow: 4px 4px 0px var(--secondary-800);
-	}
-
-	@media (max-width: 480px) {
+	@media (max-width: 715px) {
 		img {
-			scale: 2.25;
-			top: 1rem;
+			scale: 1.5;
+			top: 1.5rem;
+		}
+
+		#errorCard {
+			grid-template-columns: 2.5fr 2fr;
 		}
 	}
 
-	@media (max-width: 385px) {
+	@media (max-width: 400px) {
 		img {
-			scale: 3.25;
-			top: 1.25rem;
+			scale: 1.75;
+			top: 1.125rem;
 		}
 
 		#errorCard {
 			margin-right: 10%;
+		}
+
+		.cardBottom {
+			gap: 0.5rem;
+		}
+	}
+
+	@media (max-width: 330px) {
+		img {
+			scale: 2.5;
+			top: 1.5rem;
+		}
+
+		#errorCard {
+			grid-template-columns: 2fr 2fr;
+			margin-right: 20%;
 		}
 	}
 </style>
