@@ -116,7 +116,7 @@
 
 	a {
 		display: inline-block;
-		font-weight: 400;
+		border-radius: 0.1875rem;
 		white-space: nowrap;
 		transform: scale(1);
 		transition: transform 0.25s ease;

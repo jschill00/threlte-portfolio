@@ -46,19 +46,22 @@
 		transform: rotateX(-30deg) rotateY(5deg) rotateZ(2deg);
 	}
 
+	p {
+		text-shadow: 3px 3px 0px var(--secondary-800);
+	}
+
 	h3 {
 		font-size: 2rem;
 		font-weight: 600;
 	}
 
 	@media (max-width: 755px) {
-		#pad {
-			margin-top: 3rem;
+		#container {
+			margin-top: 10%;
 		}
 
 		p {
 			font-size: 1.25rem;
-			text-shadow: 4px 4px 0px var(--secondary-800);
 			text-wrap: balance;
 			text-align: center;
 		}
@@ -97,9 +100,9 @@
 		background-color: var(--secondary-600);
 		padding-inline: 1rem;
 		padding-block: 0.2rem;
-		font-weight: 400;
 		border: 0.5px solid var(--primary-300);
 		transition: transform 0.25s ease;
+		border-radius: 0.1875rem;
 	}
 
 	button:hover,
@@ -114,6 +117,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		gap: 50%;
 		min-height: 100vh;
 	}
 
@@ -122,9 +126,10 @@
 		grid-template-columns: 4fr 1fr;
 		width: min(40rem, 80%);
 		padding: 1.5rem;
+		border-radius: 0.375rem;
 		border: 0.5px solid var(--primary-300);
 		background-color: var(--secondary-600-transparent);
-		text-shadow: 6px 6px 0px var(--secondary-800);
+		text-shadow: 4px 4px 0px var(--secondary-800);
 	}
 
 	.cardLeft {
@@ -173,6 +178,9 @@
 
 		.cardBottom {
 			gap: 0.5rem;
+		}
+		#container {
+			margin-top: 25%;
 		}
 	}
 
