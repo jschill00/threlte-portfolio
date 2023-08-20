@@ -123,7 +123,6 @@
 		width: min(40rem, 80%);
 		padding: 1.5rem;
 		border: 0.5px solid var(--primary-300);
-		border-radius: 1rem;
 		background-color: var(--secondary-600-transparent);
 		text-shadow: 6px 6px 0px var(--secondary-800);
 	}
