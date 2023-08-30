@@ -1,0 +1,25 @@
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  wait-for-vercel-deployment:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: UnlyEd/github-action-await-vercel@v1.2.39 # TODO best practices recommend to use a fixed version instead of @v1 for production usage (i.e: @v1.2.32)
+        id: await-vercel
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        with:
+          deployment-url: jschillem.dev
+          timeout: 10 # Wait for 10 seconds before failing
+          poll-interval: 1 # Wait for 1 second before each retry
+      
+      - name: Send HTTP GET request
+        # Example: `curl http://www.google.com/ping?sitemap=https://www.example.com/sitemap.xml`
+        run: curl http://www.google.com/ping?sitemap=https://www.jschillem.dev/sitemap.xml
+
+      - name: Display deployment status
+        run: "echo The deployment at ${{ fromJson(steps.await-vercel.outputs.deploymentDetails).url }} is ${{ fromJson(steps.await-vercel.outputs.deploymentDetails).readyState }}"
