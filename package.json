@@ -11,7 +11,7 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"model-pipeline:run": "node scripts/model-pipeline.js",
-		"postbuild": "npx svelte-sitemap --out-dir .vercel/output/static --domain https://www.jschillem.dev"
+		"postbuild": "svelte-sitemap --out-dir .vercel/output/static --domain https://www.jschillem.dev"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
