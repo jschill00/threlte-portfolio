@@ -22,10 +22,10 @@ devDependencies:
     version: 6.0.6(svelte@4.2.0)(three@0.153.0)
   '@threlte/extras':
     specifier: latest
-    version: 5.2.0(svelte@4.2.0)(three@0.153.0)
+    version: 5.4.1(svelte@4.2.0)(three@0.153.0)
   '@threlte/theatre':
     specifier: latest
-    version: 2.1.1(@theatre/core@0.6.2)(@theatre/studio@0.6.2)(@threlte/core@6.0.6)(@threlte/extras@5.2.0)(svelte@4.2.0)(three@0.153.0)
+    version: 2.1.1(@theatre/core@0.6.2)(@theatre/studio@0.6.2)(@threlte/core@6.0.6)(@threlte/extras@5.4.1)(svelte@4.2.0)(three@0.153.0)
   '@types/three':
     specifier: ^0.152.1
     version: 0.152.1
@@ -65,6 +65,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.4.3
     version: 3.5.0(postcss@8.4.27)(svelte@4.2.0)
+  svelte-sitemap:
+    specifier: ^2.6.0
+    version: 2.6.0
   the-new-css-reset:
     specifier: ^1.9.0
     version: 1.9.0
@@ -407,6 +410,35 @@ packages:
       fastq: 1.15.0
     dev: true
 
+  /@oozcitak/dom@1.15.10:
+    resolution: {integrity: sha512-0JT29/LaxVgRcGKvHmSrUTEvZ8BXvZhGl2LASRUgHqDTC1M5g1pLmVv56IYNyt3bG2CUjDkc67wnyZC14pbQrQ==}
+    engines: {node: '>=8.0'}
+    dependencies:
+      '@oozcitak/infra': 1.0.8
+      '@oozcitak/url': 1.0.4
+      '@oozcitak/util': 8.3.8
+    dev: true
+
+  /@oozcitak/infra@1.0.8:
+    resolution: {integrity: sha512-JRAUc9VR6IGHOL7OGF+yrvs0LO8SlqGnPAMqyzOuFZPSZSXI7Xf2O9+awQPSMXgIWGtgUf/dA6Hs6X6ySEaWTg==}
+    engines: {node: '>=6.0'}
+    dependencies:
+      '@oozcitak/util': 8.3.8
+    dev: true
+
+  /@oozcitak/url@1.0.4:
+    resolution: {integrity: sha512-kDcD8y+y3FCSOvnBI6HJgl00viO/nGbQoCINmQ0h98OhnGITrWR3bOGfwYCthgcrV8AnTJz8MzslTQbC3SOAmw==}
+    engines: {node: '>=8.0'}
+    dependencies:
+      '@oozcitak/infra': 1.0.8
+      '@oozcitak/util': 8.3.8
+    dev: true
+
+  /@oozcitak/util@8.3.8:
+    resolution: {integrity: sha512-T8TbSnGsxo6TDBJx/Sgv/BlVJL3tshxZP7Aq5R1mSnM5OcHY2dQaxLMu2+E8u3gN0MLOzdjurqN4ZRVuzQycOQ==}
+    engines: {node: '>=8.0'}
+    dev: true
+
   /@polka/url@1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
@@ -514,8 +546,8 @@ packages:
       three: 0.153.0
     dev: true
 
-  /@threlte/extras@5.2.0(svelte@4.2.0)(three@0.153.0):
-    resolution: {integrity: sha512-hAijgQBK37gTpp2wGiSUQEb5y1+9x/V2S9kOCUiSb3A2O9+VlbDsjY4kYV1yck2nnewtlJf26mtRAyexrgjKoQ==}
+  /@threlte/extras@5.4.1(svelte@4.2.0)(three@0.153.0):
+    resolution: {integrity: sha512-aoA67Pkzyw+TAvKSDuGtSi8m6AC+mmLduZQKaWwd0y/Zx+24d/AHpnLqyA5uRK/mCVbxC0D/3Li6+fPBKHJa3g==}
     peerDependencies:
       svelte: '>=4'
       three: '>=0.133'
@@ -526,7 +558,7 @@ packages:
       troika-three-text: 0.47.2(three@0.153.0)
     dev: true
 
-  /@threlte/theatre@2.1.1(@theatre/core@0.6.2)(@theatre/studio@0.6.2)(@threlte/core@6.0.6)(@threlte/extras@5.2.0)(svelte@4.2.0)(three@0.153.0):
+  /@threlte/theatre@2.1.1(@theatre/core@0.6.2)(@theatre/studio@0.6.2)(@threlte/core@6.0.6)(@threlte/extras@5.4.1)(svelte@4.2.0)(three@0.153.0):
     resolution: {integrity: sha512-TjWjVgmZSWxLoo/KLC3KHEay4kDdh13yzESJxiu7+z1RT2ODJb4Edhuw7Ntz3fbAk/qRV5OJ79kPaEpOl/ahxQ==}
     peerDependencies:
       '@theatre/core': '>=0.6'
@@ -539,7 +571,7 @@ packages:
       '@theatre/core': 0.6.2
       '@theatre/studio': 0.6.2(@theatre/core@0.6.2)
       '@threlte/core': 6.0.6(svelte@4.2.0)(three@0.153.0)
-      '@threlte/extras': 5.2.0(svelte@4.2.0)(three@0.153.0)
+      '@threlte/extras': 5.4.1(svelte@4.2.0)(three@0.153.0)
       svelte: 4.2.0
       three: 0.153.0
     dev: true
@@ -782,6 +814,12 @@ packages:
 
   /arg@5.0.2:
     resolution: {integrity: sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==}
+    dev: true
+
+  /argparse@1.0.10:
+    resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
+    dependencies:
+      sprintf-js: 1.0.3
     dev: true
 
   /argparse@2.0.1:
@@ -1149,6 +1187,12 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: true
 
+  /esprima@4.0.1:
+    resolution: {integrity: sha512-eGuFFw7Upda+g4p+QHvnW0RyTX/SVeJBDM/gCtMARO0cLuT2HcEKnTPvhjV6aGeqrCB/sbNop0Kszm0jsaWU4A==}
+    engines: {node: '>=4'}
+    hasBin: true
+    dev: true
+
   /esquery@1.5.0:
     resolution: {integrity: sha512-YQLXUplAwJgCydQ78IMJywZCceoqk1oH01OERdSAJc/7U2AylwjhSCLDEtqwg811idIS/9fIU5GjG73IgjKMVg==}
     engines: {node: '>=0.10'}
@@ -1435,6 +1479,14 @@ packages:
   /jiti@1.19.1:
     resolution: {integrity: sha512-oVhqoRDaBXf7sjkll95LHVS6Myyyb1zaunVwk4Z0+WPSW4gjS0pl01zYKHScTuyEhQsFxV5L4DR5r+YqSyqyyg==}
     hasBin: true
+    dev: true
+
+  /js-yaml@3.14.1:
+    resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==}
+    hasBin: true
+    dependencies:
+      argparse: 1.0.10
+      esprima: 4.0.1
     dev: true
 
   /js-yaml@4.1.0:
@@ -1986,6 +2038,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /sprintf-js@1.0.3:
+    resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
+    dev: true
+
   /streamsearch@1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
     engines: {node: '>=10.0.0'}
@@ -2139,6 +2195,16 @@ packages:
       strip-indent: 3.0.0
       svelte: 4.2.0
       typescript: 5.1.6
+    dev: true
+
+  /svelte-sitemap@2.6.0:
+    resolution: {integrity: sha512-WcwsuIeo8iJFG9a5cgvXwXEGoyjk6Zowb6JmL5BbwfnFXMzakGa1+mQjthw5Ni3UV/gGbE0PgJvc7Ygir3LmFg==}
+    engines: {node: '>= 14.17.0'}
+    hasBin: true
+    dependencies:
+      fast-glob: 3.3.1
+      minimist: 1.2.8
+      xmlbuilder2: 3.1.1
     dev: true
 
   /svelte@4.2.0:
@@ -2377,6 +2443,16 @@ packages:
 
   /wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
+    dev: true
+
+  /xmlbuilder2@3.1.1:
+    resolution: {integrity: sha512-WCSfbfZnQDdLQLiMdGUQpMxxckeQ4oZNMNhLVkcekTu7xhD4tuUDyAPoY8CwXvBYE6LwBHd6QW2WZXlOWr1vCw==}
+    engines: {node: '>=12.0'}
+    dependencies:
+      '@oozcitak/dom': 1.15.10
+      '@oozcitak/infra': 1.0.8
+      '@oozcitak/util': 8.3.8
+      js-yaml: 3.14.1
     dev: true
 
   /yallist@4.0.0:
