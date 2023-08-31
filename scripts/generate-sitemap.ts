@@ -38,4 +38,4 @@ getEndpoints(tree, baseRoute);
 
 export const sitemap = getSitemapXML('https://www.jschillem.dev', routes);
 
-// fs.writeFileSync('.vercel/output/static/sitemap.xml', sitemap);
+fs.writeFileSync('.vercel/output/static/sitemap.xml', sitemap);
