@@ -1,18 +1,19 @@
-import type { RequestHandler } from '@sveltejs/kit';
+import { json, type RequestHandler } from '@sveltejs/kit';
 import dirTree from 'directory-tree';
 
 export const GET: RequestHandler = (event) => {
 	const baseRoute = '/';
 	const routes = [baseRoute];
-	const tree = dirTree('./src/routes');
+	const tree = dirTree('./');
 
-	getEndpoints(tree, baseRoute, routes);
+	return json(tree);
+	// getEndpoints(tree, baseRoute, routes);
 
-	return new Response(getSitemapXML('https://www.jschillem.dev', routes), {
-		headers: {
-			'Content-Type': 'text/xml'
-		}
-	});
+	// return new Response(getSitemapXML('https://www.jschillem.dev', routes), {
+	// headers: {
+	// 'Content-Type': 'text/xml'
+	// }
+	// });
 };
 
 function getSitemapXML(domain: string, routes: string[]) {
