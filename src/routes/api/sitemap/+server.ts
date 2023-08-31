@@ -1,9 +1,19 @@
+import type { RequestHandler } from '@sveltejs/kit';
 import dirTree from 'directory-tree';
-import * as fs from 'fs';
 
-const baseRoute = '/';
-const routes: string[] = [baseRoute];
-const date = new Date().toISOString().split('T')[0];
+export const GET: RequestHandler = (event) => {
+	const baseRoute = '/';
+	const routes = [baseRoute];
+	const tree = dirTree('./src/routes');
+
+	getEndpoints(tree, baseRoute, routes);
+
+	return new Response(getSitemapXML('https://www.jschillem.dev', routes), {
+		headers: {
+			'Content-Type': 'text/xml'
+		}
+	});
+};
 
 function getSitemapXML(domain: string, routes: string[]) {
 	let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
@@ -16,26 +26,19 @@ function getSitemapXML(domain: string, routes: string[]) {
 }
 
 function getSitemapUrl(location: string) {
+	const date = new Date().toISOString().split('T')[0];
 	const url = '<url>\n' + `<loc>${location}</loc>\n` + `<lastmod>${date}</lastmod>\n` + '</url>';
 	return url;
 }
 
-function getEndpoints(tree: dirTree.DirectoryTree, route: string) {
+function getEndpoints(tree: dirTree.DirectoryTree, route: string, routesArray: string[]) {
 	tree.children!.forEach((child) => {
 		if (child.children != undefined && child.children.length != 0) {
 			const childRoute = route + child.name;
 			if (child.children.some((e) => e.name === '+page.svelte')) {
-				routes.push(childRoute);
+				routesArray.push(childRoute);
 			}
-			getEndpoints(child, childRoute + '/');
+			getEndpoints(child, childRoute + '/', routesArray);
 		}
 	});
 }
-
-const tree = dirTree('./src/routes');
-
-getEndpoints(tree, baseRoute);
-
-export const sitemap = getSitemapXML('https://www.jschillem.dev', routes);
-
-// fs.writeFileSync('.vercel/output/static/sitemap.xml', sitemap);
