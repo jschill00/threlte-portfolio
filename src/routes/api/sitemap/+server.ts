@@ -1,7 +1,6 @@
 import { json, type RequestHandler } from '@sveltejs/kit';
-import dirTree from 'directory-tree';
+import { readdirSync } from 'fs';
 
-export const GET: RequestHandler = (event) => {
-	const tree = dirTree('./');
-	return json(tree);
+export const GET: RequestHandler = () => {
+	return json(readdirSync('./'));
 };
