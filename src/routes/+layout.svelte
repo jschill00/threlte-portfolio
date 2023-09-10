@@ -24,7 +24,7 @@
 </script>
 
 <nav>
-	<a id="hero" href="/"><h1>&lt;@jschill00&gt; Justin Schilleman</h1></a>
+	<a id="hero" href="/"><h1>&lt;@jschillem&gt; Justin Schilleman</h1></a>
 	<ul>
 		{#each links as link}
 			<li><a href={link.path}>{link.text}</a></li>
