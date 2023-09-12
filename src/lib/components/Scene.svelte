@@ -16,6 +16,7 @@
 	let zoomGridFadeAmount = 60;
 	let extraStars = false;
 
+
 	$: {
 		if (screenSize < START_ZOOM) {
 			const zoomFactor =

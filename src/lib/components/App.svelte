@@ -15,4 +15,8 @@
 		height: 100%;
 		background-color: var(--secondary-800);
 	}
+
+	#canvasContainer:hover {
+		cursor: move;
+	}
 </style>
