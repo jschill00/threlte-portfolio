@@ -8,17 +8,25 @@
 	};
 
 	const links: Link[] = [
+		// {
+		// 	text: 'projects',
+		// 	path: '/projects'
+		// },
+		// {
+		// 	text: 'about me',
+		// 	path: '/about'
+		// },
+		// {
+		// 	text: 'contact me',
+		// 	path: '/contact'
+		// }
 		{
-			text: 'projects',
-			path: '/projects'
+			text: 'LinkedIn',
+			path: 'https://www.linkedin.com/in/jschillem/'
 		},
 		{
-			text: 'about me',
-			path: '/about'
-		},
-		{
-			text: 'contact me',
-			path: '/contact'
+			text: 'GitHub',
+			path: 'https://www.github.com/jschillem/'
 		}
 	];
 </script>

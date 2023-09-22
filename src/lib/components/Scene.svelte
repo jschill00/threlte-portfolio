@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { T, useThrelte, useRender } from '@threlte/core';
+	import { T, useThrelte } from '@threlte/core';
 	import { ContactShadows, Environment, Float, Grid, OrbitControls } from '@threlte/extras';
 	import TitleScene from './models/TitleScene.svelte';
 	import Stars from './models/Stars.svelte';
@@ -15,7 +15,6 @@
 	let zoomAmount = 40;
 	let zoomGridFadeAmount = 60;
 	let extraStars = false;
-
 
 	$: {
 		if (screenSize < START_ZOOM) {
@@ -38,6 +37,7 @@
 		}
 	}
 
+	// eslint-disable-next-line no-empty-pattern
 	const {} = useThrelte();
 </script>
 
